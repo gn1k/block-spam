@@ -54,7 +54,7 @@
 			<section class="group-bot">
 				<div class="grid-container-mid">
 					<div>Input matching author.</div>
-					<textarea name="textarea_author" rows="10"></textarea>
+					<textarea name="textarea_author" rows="6"></textarea>
 				</div>
 			</section>
 			<section class="group-bot">
@@ -66,12 +66,36 @@
 			<section class="group-bot">
 				<div class="grid-container-mid">
 					<div>Input matching email.</div>
-					<textarea name="textarea_email" rows="10"></textarea>
+					<textarea name="textarea_email" rows="6"></textarea>
 				</div>
 			</section>
 			<section class="group-bot">
                                 <div class="grid-container-bot">
 					<input type="submit" name="button_save_email" class="button button-primary" value="Save"></input>
+				</div>
+                        </section>
+			
+			<section class="group-bot">
+				<div class="grid-container-mid">
+					<div>Input matching URL.</div>
+					<textarea name="textarea_url" rows="6"></textarea>
+				</div>
+			</section>
+			<section class="group-bot">
+                                <div class="grid-container-bot">
+					<input type="submit" name="button_save_url" class="button button-primary" value="Save"></input>
+				</div>
+                        </section>
+			
+			<section class="group-bot">
+				<div class="grid-container-mid">
+					<div>Input matching content.</div>
+					<textarea name="textarea_content" rows="6"></textarea>
+				</div>
+			</section>
+			<section class="group-bot">
+                                <div class="grid-container-bot">
+					<input type="submit" name="button_save_content" class="button button-primary" value="Save"></input>
 				</div>
                         </section>
 			</form>
