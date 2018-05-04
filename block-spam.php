@@ -31,14 +31,14 @@
                 $charset_collate = $wpdb->get_charset_collate();
 
                 $tables = "
-			CREATE TABLE IF NOT EXISTS {$wpdb->base_prefix}block_spam (
-				id bigint(20) unsigned NOT NULL auto_increment,
-				author longtext COLLATE utf8mb4_unicode_520_ci NOT NULL default '',
-				email longtext COLLATE utf8mb4_unicode_520_ci NOT NULL default '',
-				url longtext COLLATE utf8mb4_unicode_520_ci NOT NULL default '',
-				content longtext COLLATE utf8mb4_unicode_520_ci NOT NULL default '',
-				PRIMARY KEY  (id),
-			) $charset_collate;";
+CREATE TABLE IF NOT EXISTS {$wpdb->base_prefix}block_spam (
+	id bigint(20) unsigned NOT NULL auto_increment,
+	author longtext COLLATE utf8mb4_unicode_520_ci NOT NULL default '',
+	email longtext COLLATE utf8mb4_unicode_520_ci NOT NULL default '',
+	url longtext COLLATE utf8mb4_unicode_520_ci NOT NULL default '',
+	content longtext COLLATE utf8mb4_unicode_520_ci NOT NULL default '',
+	PRIMARY KEY  (id),
+) $charset_collate;";
 		require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
                 dbDelta( $tables );
 	}
