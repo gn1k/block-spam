@@ -25,13 +25,19 @@
 	}
 
 //----------------------------------------------------------------------
+	function check_database() {
+		global $wpdb;
+		$result = $wpdb->get_results("SELECT COUNT(*) FROM {$wpdb->prefix}block_spam");
+	}
+
+//----------------------------------------------------------------------
 	// Show page
 	function show_page() {
 	
 		if(array_key_exists('button_save_email', $_POST)) {
 			update_option('save_email', $_POST['textarea_author']);
 			?>
-			<div class="wrapper"><div class="submit"><strong>Saved.</strong></div></div>
+			<div class="wrapper"><div class="submit"><strong>Saved.<?php global $wpdb; print $wpdb->get_charset_collate(); ?></strong></div></div>
 			<?php
 		}
 		$input_script = get_option('save_email', '');
