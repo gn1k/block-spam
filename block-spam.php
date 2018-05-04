@@ -28,13 +28,13 @@
 	// Show page
 	function show_page() {
 	
-		if(array_key_exists('submit_scripts_update', $_POST)) {
-			update_option('bs_input_scripts', $_POST['textarea_input']);
+		if(array_key_exists('button_save_email', $_POST)) {
+			update_option('save_email', $_POST['textarea_author']);
 			?>
-			<div class="wrapper"><div class="submit"><strong>Submited.<?php $input_script = get_option('bs_input_scripts', 'none'); print $input_script; ?></strong></div></div>
+			<div class="wrapper"><div class="submit"><strong>Saved.</strong></div></div>
 			<?php
 		}
-		$input_script = get_option('bs_input_scripts', '');
+		$input_script = get_option('save_email', '');
 		?>
 		<html>
 		<head>
@@ -50,15 +50,28 @@
 			</section>
 			
 			<form method="post" action="">
+
 			<section class="group-bot">
 				<div class="grid-container-mid">
 					<div>Input text here.</div>
-					<textarea name="textarea_input" rows="10"><?php print "hello".$input_script; ?></textarea>
+					<textarea name="textarea_author" rows="10"><?php print "hello".$input_script; ?></textarea>
 				</div>
 			</section>
 			<section class="group-bot">
                                 <div class="grid-container-bot">
-					<input type="submit" name="submit_scripts_update" class="button button-primary" var="Submit"></input>
+					<input type="submit" name="button_save_author" class="button button-primary" var="Save"></input>
+				</div>
+                        </section>
+				
+			<section class="group-bot">
+				<div class="grid-container-mid">
+					<div>Input text here.</div>
+					<textarea name="textarea_email" rows="10"><?php print "hello".$input_script; ?></textarea>
+				</div>
+			</section>
+			<section class="group-bot">
+                                <div class="grid-container-bot">
+					<input type="submit" name="button_save_email" class="button button-primary" var="Save"></input>
 				</div>
                         </section>
 			</form>
