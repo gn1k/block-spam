@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+/*, *::before, *::after {
+//	box-sizing: border-box;
+//	font-size: 16px;
+}*/
+
+.wrapper {
+	padding-top: 1em;
+	padding-right: 1em;
+	margin: 0;
+}
+
+.group-top {
+	font-family: "Raleway", sans-serif;
+        font-weight: 300;
+        line-height: 1.6;
+	box-sizing: border-box;
+	font-size: 16px;
+	max-width: 2048;
+	background: #0b2027;
+	padding: 1em 1em;
+	color: rgba(248, 248, 248, .6);
+}
+
+.group-bot {
+	font-family: "Raleway", sans-serif;
+        font-weight: 300;
+        line-height: 1.6;
+        box-sizing: border-box;
+        font-size: 14px;
+	background: #ffffff;
+	padding: 1em 0;
+}
+.grid-container {
+	width: 95%;
+	max-width: 1920px;
+	margin: 0 0;
+	display: grid;
+	grid-template-columns: auto;
+	grid-gap: 1em;
+}
+@media (min-width: 52em) {
+	.grid-container {
+		max-width: 1920px;
+		grid-template-columns: auto;
+	}
+}
+
+.grid-container-mid {
+	width: 70%;
+	max-width: 1080px;
+	margin: 0 1em;
+	display: grid;
+	grid-template-columns: auto;
+	grid-gap: 1em;
+}
+@media (min-width: 52em) {
+	.grid-container-mid {
+		grid-template-columns: 200px auto;
+	}
+}
+
+.grid-container-mid > textarea {
+	font-family: monospace;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.grid-container-bot {
+        width: 70%;
+        max-width: 1080px;
+        margin: 0 1em;
+        display: grid;
+        grid-template-columns: auto;
+        grid-gap: 1em;
+}
+@media (min-width: 52em) {
+        .grid-container-bot {
+                grid-template-columns: 200px auto;
+        }
+	.grid-container-bot > input {
+		grid-row: 1;
+		grid-column: 2;
+		width: 100px;
+	}
+}
+
+.grid-container-bot > input {
+	width: 100px;	
+}
+
+.submit {
+	padding-left: 1em;
+	box-sizing: border-box;
+	font-size: 14px;
+        background: #ffffff;
+}
