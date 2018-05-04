@@ -59,7 +59,7 @@
 			</section>
 			<section class="group-bot">
                                 <div class="grid-container-bot">
-					<input type="submit" name="button_save_author" class="button button-primary" var="Save"></input>
+					<input type="submit" name="button_save_author" class="button button-primary" value="Save"></input>
 				</div>
                         </section>
 				
@@ -71,7 +71,7 @@
 			</section>
 			<section class="group-bot">
                                 <div class="grid-container-bot">
-					<input type="submit" name="button_save_email" class="button button-primary" var="Save"></input>
+					<input type="submit" name="button_save_email" class="button button-primary" value="Save"></input>
 				</div>
                         </section>
 			</form>
