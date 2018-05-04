@@ -53,8 +53,8 @@
 
 			<section class="group-bot">
 				<div class="grid-container-mid">
-					<div>Input text here.</div>
-					<textarea name="textarea_author" rows="10"><?php print "hello".$input_script; ?></textarea>
+					<div>Input matching author.</div>
+					<textarea name="textarea_author" rows="10"></textarea>
 				</div>
 			</section>
 			<section class="group-bot">
@@ -65,8 +65,8 @@
 				
 			<section class="group-bot">
 				<div class="grid-container-mid">
-					<div>Input text here.</div>
-					<textarea name="textarea_email" rows="10"><?php print "hello".$input_script; ?></textarea>
+					<div>Input matching email.</div>
+					<textarea name="textarea_email" rows="10"></textarea>
 				</div>
 			</section>
 			<section class="group-bot">
