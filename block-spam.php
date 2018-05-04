@@ -27,13 +27,26 @@
 //----------------------------------------------------------------------
 	function check_database() {
 		global $wpdb;
-		$result = $wpdb->get_results("SELECT COUNT(*) FROM {$wpdb->prefix}block_spam");
+
+                $charset_collate = $wpdb->get_charset_collate();
+
+                $tables = "
+			CREATE TABLE IF NOT EXISTS {$wpdb->base_prefix}block_spam (
+				id bigint(20) unsigned NOT NULL auto_increment,
+				author longtext COLLATE utf8mb4_unicode_520_ci NOT NULL default '',
+				email longtext COLLATE utf8mb4_unicode_520_ci NOT NULL default '',
+				url longtext COLLATE utf8mb4_unicode_520_ci NOT NULL default '',
+				content longtext COLLATE utf8mb4_unicode_520_ci NOT NULL default '',
+				PRIMARY KEY  (id),
+			) $charset_collate;";
+		require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
+                dbDelta( $tables );
 	}
 
 //----------------------------------------------------------------------
 	// Show page
 	function show_page() {
-	
+		check_database();
 		if(array_key_exists('button_save_email', $_POST)) {
 			update_option('save_email', $_POST['textarea_author']);
 			?>
