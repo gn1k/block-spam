@@ -30,28 +30,32 @@
 
                 $charset_collate = $wpdb->get_charset_collate();
 
+// Check table exist
                 $tables = "
 CREATE TABLE IF NOT EXISTS {$wpdb->base_prefix}block_spam (
-	id bigint(20) unsigned NOT NULL auto_increment,
-	author longtext COLLATE utf8mb4_unicode_520_ci NOT NULL default '',
-	email longtext COLLATE utf8mb4_unicode_520_ci NOT NULL default '',
-	url longtext COLLATE utf8mb4_unicode_520_ci NOT NULL default '',
-	content longtext COLLATE utf8mb4_unicode_520_ci NOT NULL default '',
-	PRIMARY KEY  (id)
+	name varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+	value longtext COLLATE utf8mb4_unicode_520_ci NOT NULL default '',
+	PRIMARY KEY (name)
 ) $charset_collate;";
 		require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
                 dbDelta( $tables );
-		
+
+// Check column exist
+
+		$query = "SELECT * FROM {$wpdb->base_prefix}block_spam WHERE `name`='author' LIMIT 1";
+		$query = "SHOW COLUMNS FROM {$wpdb->base_prefix}block_spam LIKE 'name'";
+		$result = $wpdb->get_results($query);
+		return sizeof($result);
 	}
 
 //----------------------------------------------------------------------
 	// Show page
 	function show_page() {
-		check_database();
+		$re = check_database();
 		if(array_key_exists('button_save_email', $_POST)) {
 			update_option('save_email', $_POST['textarea_author']);
 			?>
-			<div class="wrapper"><div class="submit"><strong>Saved.<?php global $wpdb; print $wpdb->get_charset_collate(); ?></strong></div></div>
+			<div class="wrapper"><div class="submit"><strong>Saved.<?php print $re?></strong></div></div>
 			<?php
 		}
 		$input_script = get_option('save_email', '');
@@ -79,7 +83,7 @@ CREATE TABLE IF NOT EXISTS {$wpdb->base_prefix}block_spam (
 			</section>
 			<section class="group-bot">
                                 <div class="grid-container-bot">
-					<input type="submit" name="button_save_author" class="button button-primary" value="Save"></input>
+					<input type="submit" name="button_save_author" class="button button-primary" value="Saved"></input>
 				</div>
                         </section>
 				
